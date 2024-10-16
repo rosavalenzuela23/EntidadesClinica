@@ -43,7 +43,7 @@ public @Data class Instrumento {
     private String textoArchivo;
     
     @JoinColumn(name = "id_psicologo")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Psicologo psicologo;
     
 }

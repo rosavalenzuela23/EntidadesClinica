@@ -76,7 +76,7 @@ public @Data class Paciente {
     
     @OneToOne(
             mappedBy="paciente", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private CartaConcentimiento carta;
     

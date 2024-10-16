@@ -5,6 +5,7 @@
 package org.marcos.Entidades;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
@@ -27,7 +28,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public @Data class Psicologo extends Empleado{
     
-    @ManyToMany()
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "pacientes_psicologos",
         joinColumns = @JoinColumn(name = "id_psicologo"),
@@ -35,7 +36,7 @@ public @Data class Psicologo extends Empleado{
     )
     private List<Paciente> pacientes;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_psicologo")
     private List<Sesion> sesiones;
 }

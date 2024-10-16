@@ -54,7 +54,7 @@ public @Data class IntegranteHogar {
     private Parentesco parentesco;
     
     @PrimaryKeyJoinColumn
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_expediente")
     private Expediente expediente;
     

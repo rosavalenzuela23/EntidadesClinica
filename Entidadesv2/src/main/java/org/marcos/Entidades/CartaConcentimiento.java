@@ -36,7 +36,7 @@ public @Data class CartaConcentimiento {
     @Column(name = "ruta_archivo")
     private @Getter @Setter String rutaArchivo;
     
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_paciente")
     private @Getter Paciente paciente;
     

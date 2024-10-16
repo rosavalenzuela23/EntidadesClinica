@@ -48,7 +48,7 @@ public @Data class FamiliarConfianza {
     private String telefono;
     
     @PrimaryKeyJoinColumn
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_expediente")
     private Expediente expediente;
 }
