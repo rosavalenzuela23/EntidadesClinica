@@ -60,7 +60,7 @@ public @Data class Problema {
     @Column(name = "afectacion_espiritual")
     private @Getter @Setter byte afectacionEspiritual;
     
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private Sesion sesion;
     

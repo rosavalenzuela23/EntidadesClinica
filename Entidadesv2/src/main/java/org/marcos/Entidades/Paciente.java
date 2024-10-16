@@ -65,18 +65,18 @@ public @Data class Paciente {
     private TipoVivienda tipoVivienda;
     
     
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "pacientes")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "pacientes")
     private List<Psicologo> psicologos;
     
     @OneToOne(
             mappedBy ="paciente", cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     private Expediente expediente;
     
     @OneToOne(
             mappedBy="paciente", cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     private CartaConcentimiento carta;
     

@@ -28,7 +28,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public @Data class Psicologo extends Empleado{
     
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "pacientes_psicologos",
         joinColumns = @JoinColumn(name = "id_psicologo"),
@@ -36,7 +36,7 @@ public @Data class Psicologo extends Empleado{
     )
     private List<Paciente> pacientes;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_psicologo")
     private List<Sesion> sesiones;
 }

@@ -54,11 +54,11 @@ public @Data class Expediente {
     private String preguntaMagica;
     
     @PrimaryKeyJoinColumn
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "id")
     private List<IntegranteHogar> integranteHogar;
     
     @PrimaryKeyJoinColumn
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "id")
     private List<FamiliarConfianza> familiaresConfianza;
     
     @Column(name = "motivo_consulta")

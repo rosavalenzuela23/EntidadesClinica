@@ -54,7 +54,7 @@ public class ComentarioSesion {
     private @Getter @Setter String aspectoAMedir;
     
     @PrimaryKeyJoinColumn
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private @Getter Sesion sesion;
     
 }
