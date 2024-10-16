@@ -15,6 +15,7 @@ import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import java.time.LocalDate;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -41,7 +42,7 @@ public class ComentarioSesion {
     private @Getter int numeroSesion;
     
     @Column(name = "fecha_hora")
-    private @Getter @Setter LocalDate fecha;
+    private @Getter @Setter Date fecha;
     
     @Column(name = "valoracion_fin")
     private @Getter @Setter byte valoracionFin; 
