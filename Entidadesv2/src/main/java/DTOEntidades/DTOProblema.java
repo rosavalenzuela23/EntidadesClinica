@@ -14,36 +14,19 @@ import lombok.NoArgsConstructor;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-public @Data class DTOProblema {
-     
-    private Long id;
-    
+public @Data
+class DTOProblema {
 
+    private Long id;
     private String descripcion;
-    
-    
-    private  int intensidad;
-    
-   
+    private int intensidad;
     private String frecuencia;
-    
-    
     private byte afectacionFamiliar;
-    
-   
     private byte afectacionSalud;
-    
-  
     private byte afectacionPareja;
-    
-  
     private byte afectacionAmigos;
-    
- 
     private byte afectacionLaboral;
-    
-    
-    private  byte afectacionEspiritual;
-    
+    private byte afectacionEspiritual;
+
     private DTOSesion sesion;
 }

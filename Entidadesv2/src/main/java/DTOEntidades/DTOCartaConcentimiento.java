@@ -4,24 +4,20 @@
  */
 package DTOEntidades;
 
-import java.util.Date;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.Paciente;
 
 /**
  *
- * @author 
+ * @author natsu
  */
+
 @AllArgsConstructor
 @NoArgsConstructor
-public @Data class DTOSesion {
-    
+public @Data class DTOCartaConcentimiento {
     private Long id;
-    private List<DTOComentarioSesion> comentarios;
-    private Date fecha;
-    private List<DTOProblema> problemasSesion;
-    private DTOExpediente expediente;
-    private DTOPsicologo psicologo;
+    private String rutaArchivo;
+    private DTOPaciente paciente;
 }

@@ -4,7 +4,9 @@
  */
 package DTOEntidades;
 
+import java.util.List;
 import lombok.Data;
+import org.marcos.Entidades.Paciente;
 
 /**
  *
@@ -12,6 +14,15 @@ import lombok.Data;
  */
 public @Data class DTOExpediente {
     
-    
+    private Long id;
+    private String enfermedadPrevia;
+    private DTODiagnostico diagnostico;
+    private String antecedentes;
+    private String preguntaMagica;
+    private List<DTOIntegranteHogar> integranteHogar;
+    private List<DTOFamiliarConfianza> familiaresConfianza;
+    private String motivoConsulta;
+    private DTOPaciente paciente;
+    private List<DtoMedicamentoDelExpediente> medicamentos;
     
 }
