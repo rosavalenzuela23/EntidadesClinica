@@ -5,13 +5,17 @@
 package DTOEntidades;
 
 import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.marcos.Entidades.Paciente;
 
 /**
  *
  * @author natsu
  */
+@AllArgsConstructor
+@NoArgsConstructor
 public @Data class DTOExpediente {
     
     private Long id;

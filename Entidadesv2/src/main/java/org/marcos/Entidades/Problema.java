@@ -10,8 +10,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -60,8 +60,8 @@ public @Data class Problema {
     @Column(name = "afectacion_espiritual")
     private @Getter @Setter byte afectacionEspiritual;
     
+    @JoinColumn(name = "id_sesion")
     @ManyToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
     private Sesion sesion;
     
 }

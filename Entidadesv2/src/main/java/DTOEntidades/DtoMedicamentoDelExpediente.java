@@ -4,12 +4,16 @@
  */
 package DTOEntidades;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
  * @author natsu
  */
+@AllArgsConstructor
+@NoArgsConstructor
 public @Data class DtoMedicamentoDelExpediente {
     private DTOMedicamento medicamento;
     private String dosis;

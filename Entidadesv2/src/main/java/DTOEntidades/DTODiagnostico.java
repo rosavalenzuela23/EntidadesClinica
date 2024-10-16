@@ -4,14 +4,17 @@
  */
 package DTOEntidades;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
  * @author natsu
  */
-public @Data
-class DTODiagnostico {
+@AllArgsConstructor
+@NoArgsConstructor
+public @Data class DTODiagnostico {
 
     private Long id;
 

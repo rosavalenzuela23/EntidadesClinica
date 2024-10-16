@@ -4,13 +4,17 @@
  */
 package DTOEntidades;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.marcos.Entidades.Psicologo;
 
 /**
  *
  * @author natsu
  */
+@AllArgsConstructor
+@NoArgsConstructor
 public @Data class DTOInstrumento {
     private Long id;
     private String nombreInstrumento;

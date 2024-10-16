@@ -5,13 +5,17 @@
 package DTOEntidades;
 
 import java.util.Date;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.marcos.Entidades.Parentesco;
 
 /**
  *
  * @author natsu
  */
+@AllArgsConstructor
+@NoArgsConstructor
 public @Data class DTOIntegranteHogar {
     private Long id;
     private String ocupacion;

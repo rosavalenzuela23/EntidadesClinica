@@ -39,6 +39,7 @@ public @Data class Sesion {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private @Getter Long id;
     
     @Cascade(CascadeType.ALL)
@@ -50,8 +51,7 @@ public @Data class Sesion {
     private @Getter @Setter Date fecha;
     
     @Cascade(CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    @OneToMany
+    @OneToMany(mappedBy = "sesion")
     private @Getter @Setter List<Problema> problemasSesion;
     
     @OneToOne
