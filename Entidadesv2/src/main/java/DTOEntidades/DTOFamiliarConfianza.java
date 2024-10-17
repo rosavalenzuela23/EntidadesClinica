@@ -7,6 +7,7 @@ package DTOEntidades;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.FamiliarConfianza;
 import org.marcos.Entidades.Parentesco;
 
 /**
@@ -22,6 +23,18 @@ public @Data class DTOFamiliarConfianza {
     private String apellidoMaterno;
     private Parentesco parentesco;
     private String telefono;
-    private DTOExpediente expediente;
+    
+    public static DTOFamiliarConfianza from(FamiliarConfianza f) {
+        var dto = new DTOFamiliarConfianza();
+        
+        dto.setId(f.getId());
+        dto.setNombre(f.getNombre());
+        dto.setApellidoPaterno(f.getApellidoPaterno());
+        dto.setApellidoMaterno(f.getApellidoMaterno());
+        dto.setParentesco(f.getParentesco());
+        dto.setTelefono(f.getTelefono());
+        
+        return dto;
+    } 
     
 }

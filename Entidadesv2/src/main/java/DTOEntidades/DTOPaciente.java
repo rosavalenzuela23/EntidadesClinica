@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.marcos.Entidades.EstadoCivil;
+import org.marcos.Entidades.Paciente;
 import org.marcos.Entidades.TipoVivienda;
 
 /**
@@ -27,7 +28,20 @@ public @Data class DTOPaciente {
     private String apellidoMaterno;
     private EstadoCivil estadoCivil;
     private TipoVivienda tipoVivienda;
-    private List<DTOPsicologo> psicologos;
-    private DTOExpediente expediente;
-    private DTOCartaConcentimiento carta;
+    
+    public static DTOPaciente from(Paciente p) {
+        var dto = new DTOPaciente();
+        
+        dto.setId(p.getId());
+        dto.setTelefonoEmergencia(p.getTelefonoEmergencia());
+        dto.setEscolaridad(p.getEscolaridad());
+        dto.setNombre(p.getNombre());
+        dto.setApellidoMaterno(p.getApellidoMaterno());
+        dto.setApellidoPaterno(p.getApellidoPaterno());
+        dto.setEstadoCivil(p.getEstadoCivil());
+        dto.setTipoVivienda(p.getTipoVivienda());
+        
+        return dto;
+    }
+    
 }

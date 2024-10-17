@@ -7,6 +7,7 @@ package DTOEntidades;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.MedicamentoDelExpediente;
 
 /**
  *
@@ -18,4 +19,15 @@ public @Data class DtoMedicamentoDelExpediente {
     private DTOMedicamento medicamento;
     private String dosis;
     private String frecuencia;
+    
+    public static DtoMedicamentoDelExpediente from(MedicamentoDelExpediente mde) {
+        var dto = new DtoMedicamentoDelExpediente();
+        
+        dto.setMedicamento(DTOMedicamento.from(mde.getId().getMedicamento()));
+        dto.setDosis(mde.getDosis());
+        dto.setFrecuencia(mde.getFrecuencia());
+        
+        return dto;
+    }
+    
 }

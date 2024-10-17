@@ -7,6 +7,7 @@ package DTOEntidades;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.Problema;
 
 /**
  *
@@ -28,5 +29,22 @@ class DTOProblema {
     private byte afectacionLaboral;
     private byte afectacionEspiritual;
 
-    private DTOSesion sesion;
+    public static DTOProblema from(Problema p) {
+        var dto = new DTOProblema();
+        
+        dto.setId(p.getId());
+        dto.setDescripcion(p.getDescripcion());
+        dto.setIntensidad(p.getIntensidad());
+        dto.setFrecuencia(p.getFrecuencia());
+        dto.setAfectacionFamiliar(p.getAfectacionFamiliar());
+        dto.setAfectacionSalud(p.getAfectacionSalud());
+        dto.setAfectacionPareja(p.getAfectacionPareja());
+        dto.setAfectacionAmigos(p.getAfectacionAmigos());
+        dto.setAfectacionLaboral(p.getAfectacionLaboral());
+        dto.setAfectacionEspiritual(p.getAfectacionEspiritual());
+        
+        return dto;
+    }
+    
+    
 }

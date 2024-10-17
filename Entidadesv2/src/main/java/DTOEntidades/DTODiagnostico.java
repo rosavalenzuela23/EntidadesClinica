@@ -7,6 +7,7 @@ package DTOEntidades;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.Diagnostico;
 
 /**
  *
@@ -21,4 +22,15 @@ public @Data class DTODiagnostico {
     private String titulo;
 
     private String descripcion;
+    
+    public static DTODiagnostico from(Diagnostico d) {
+        var dto = new DTODiagnostico();
+        
+        dto.setId(d.getId());
+        dto.setDescripcion(d.getDescripcion());
+        dto.setTitulo(d.getTitulo());
+        
+        return dto;
+    }
+    
 }

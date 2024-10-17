@@ -7,7 +7,9 @@ package DTOEntidades;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.Psicologo;
 
 /**
  *
@@ -15,7 +17,18 @@ import lombok.NoArgsConstructor;
  */
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class DTOPsicologo {
+@EqualsAndHashCode(callSuper = true)
+public @Data class DTOPsicologo extends DTOEmpleado {
     private List<DTOPaciente> pacientes;
     private List<DTOSesion> sesiones;
+    
+    public static DTOPsicologo from(Psicologo p) {
+        var dto = new DTOPsicologo();
+        
+        dto.setId(p.getId());
+        dto.setUsuario(p.getUsuario());
+        
+        return dto;
+    }
+    
 } 

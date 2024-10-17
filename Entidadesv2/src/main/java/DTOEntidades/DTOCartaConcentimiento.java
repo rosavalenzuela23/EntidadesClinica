@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.marcos.Entidades.CartaConcentimiento;
-import org.marcos.Entidades.Paciente;
 
 /**
  *
@@ -17,8 +16,18 @@ import org.marcos.Entidades.Paciente;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public @Data class DTOCartaConcentimiento {   
+public @Data class DTOCartaConcentimiento {
+    
     private Long id;
     private String rutaArchivo;
-    private DTOPaciente paciente;
+    
+    public static DTOCartaConcentimiento from(CartaConcentimiento carta) {
+        
+        var dtocarta = new DTOCartaConcentimiento();
+        dtocarta.setId(carta.getId());
+        dtocarta.setRutaArchivo(carta.getRutaArchivo());
+        
+        return dtocarta;
+    }
+
 }

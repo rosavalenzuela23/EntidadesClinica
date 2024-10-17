@@ -7,6 +7,7 @@ package DTOEntidades;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.Empleado;
 
 /**
  *
@@ -17,5 +18,14 @@ import lombok.NoArgsConstructor;
 public @Data class DTOEmpleado {
     private Long id;
     private String usuario;
-    private String contrasenia;   
+    
+    public static DTOEmpleado from(Empleado e) {
+        var dto = new DTOEmpleado();
+        
+        dto.setId(e.getId());
+        dto.setUsuario(e.getUsuario());
+        
+        return dto;
+    }
+    
 }

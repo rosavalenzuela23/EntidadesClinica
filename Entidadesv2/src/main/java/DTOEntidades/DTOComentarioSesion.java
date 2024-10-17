@@ -8,7 +8,7 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.marcos.Entidades.Sesion;
+import org.marcos.Entidades.ComentarioSesion;
 
 /**
  *
@@ -23,5 +23,18 @@ public @Data class DTOComentarioSesion {
     private byte valoracionFin;
     private byte valoracionInicio;
     private String aspectoAMedir;
-    private DTOSesion sesion;
+    
+    public static DTOComentarioSesion from(ComentarioSesion c) {
+        var dto = new DTOComentarioSesion();
+        
+        dto.setId(c.getId());
+        dto.setNumeroSesion(c.getNumeroSesion());
+        dto.setFecha(c.getFecha());
+        dto.setValoracionFin(c.getValoracionFin());
+        dto.setValoracionInicio(c.getValoracionInicio());
+        dto.setAspectoAMedir(c.getAspectoAMedir());
+        
+        return dto;
+    }
+    
 }

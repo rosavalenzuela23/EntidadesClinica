@@ -4,10 +4,10 @@
  */
 package DTOEntidades;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.marcos.Entidades.Medicamento;
 
 /**
  *
@@ -19,5 +19,15 @@ public @Data class DTOMedicamento {
     private Long id;
     private String nombre;
     private String descripcion;
-    private List<DtoMedicamentoDelExpediente> expedientes;
+    
+    public static DTOMedicamento from(Medicamento m) {
+        var dto = new DTOMedicamento();
+        
+        dto.setId(m.getId());
+        dto.setNombre(m.getNombre());
+        dto.setDescripcion(m.getDescripcion());
+        
+        return dto;
+    }
+    
 }
