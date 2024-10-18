@@ -50,7 +50,7 @@ public @Data class Sesion {
     @Column(name = "fecha_hora")
     private @Getter @Setter Date fecha;
     
-    @Column(name = "puntacion_vestimenta")
+    @Column(name = "puntuacion_vestimenta")
     private byte puntuacionVestimenta;
     
     @Column(name = "puntuacion_bienestar")
