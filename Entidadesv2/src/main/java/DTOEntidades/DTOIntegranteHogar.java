@@ -23,7 +23,7 @@ public @Data class DTOIntegranteHogar {
     private String nombre;
     private String statusRelacion;
     private Date fechaNacimiento;
-    private Parentesco parentesco;
+    private String parentesco;
     
     public static DTOIntegranteHogar from(IntegranteHogar ih) {
         var dto = new DTOIntegranteHogar();

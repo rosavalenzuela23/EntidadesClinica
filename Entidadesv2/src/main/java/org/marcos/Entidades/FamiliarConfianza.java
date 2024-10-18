@@ -42,7 +42,7 @@ public @Data class FamiliarConfianza {
     private String apellidoMaterno;
     
     @Column(name = "parentesco")
-    private Parentesco parentesco;
+    private String parentesco;
     
     @Column(name = "telefono")
     private String telefono;

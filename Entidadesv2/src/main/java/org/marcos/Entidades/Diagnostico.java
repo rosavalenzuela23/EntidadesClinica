@@ -18,6 +18,10 @@ import lombok.NoArgsConstructor;
  *
  * @author natsu
  */
+/**
+ * 
+ * @author
+ 
 @Entity
 @Table(name = "diagnosticos")
 @AllArgsConstructor
@@ -33,3 +37,4 @@ public @Data class Diagnostico {
     @Column(name = "Descripcion")
     private String descripcion;
 }
+*/

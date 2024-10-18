@@ -10,5 +10,8 @@ package org.marcos.Entidades;
  */
 public enum EstadoCivil {
     CASADO,
-    SOLTERO
+    SOLTERO, 
+    VIUDO,
+    DIVORCIADO,
+    UNIONLIBRE
 }

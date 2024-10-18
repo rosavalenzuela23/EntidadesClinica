@@ -42,10 +42,14 @@ public @Data class Expediente {
     @Column(name = "enfermedad_previa")
     private String enfermedadPrevia;
     
+    /**
     @ManyToOne(fetch = FetchType.EAGER)
     @PrimaryKeyJoinColumn
     @JoinColumn(name = "id_diagnostico")
     private Diagnostico diagnostico;
+    **/
+    @Column (name = "diagnostico")
+    private String diagnostico; 
     
     @Column(name = "antecedentes")
     private String antecedentes;

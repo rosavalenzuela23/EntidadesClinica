@@ -21,7 +21,7 @@ public @Data class DTOFamiliarConfianza {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    private Parentesco parentesco;
+    private String parentesco;
     private String telefono;
     
     public static DTOFamiliarConfianza from(FamiliarConfianza f) {

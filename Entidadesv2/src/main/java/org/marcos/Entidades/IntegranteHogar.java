@@ -50,8 +50,8 @@ public @Data class IntegranteHogar {
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
     
-    @Enumerated(EnumType.STRING)
-    private Parentesco parentesco;
+    @Column(name = "parentesco")
+    private String parentesco;
     
     @PrimaryKeyJoinColumn
     @ManyToOne(fetch = FetchType.LAZY)

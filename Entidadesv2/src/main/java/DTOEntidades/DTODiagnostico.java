@@ -7,12 +7,16 @@ package DTOEntidades;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.marcos.Entidades.Diagnostico;
+//import org.marcos.Entidades.Diagnostico;
 
 /**
  *
  * @author natsu
  */
+/**
+ * 
+ * @author 
+ 
 @AllArgsConstructor
 @NoArgsConstructor
 public @Data class DTODiagnostico {
@@ -34,3 +38,4 @@ public @Data class DTODiagnostico {
     }
     
 }
+*/
