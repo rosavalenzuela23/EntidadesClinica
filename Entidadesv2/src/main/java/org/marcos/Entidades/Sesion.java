@@ -50,6 +50,42 @@ public @Data class Sesion {
     @Column(name = "fecha_hora")
     private @Getter @Setter Date fecha;
     
+    @Column(name = "puntacion_vestimenta")
+    private byte puntuacionVestimenta;
+    
+    @Column(name = "puntuacion_bienestar")
+    private byte puntuacionBienestar;
+    
+    @Column(name = "puntuacion_arreglo_personal")
+    private byte puntuacionArregloPersonal;
+    
+    @Column(name = "puntuacion_postura")
+    private byte puntuacionPostura;
+    
+    @Column(name = "puntuacion_contacto_visual")
+    private byte puntuacionContactoVisual;
+    
+    @Column(name = "puntuacion_habla")
+    private byte puntuacionHabla;
+    
+    @Column(name = "puntuacion_velocidad_habla")
+    private byte puntuacionVelocidadHabla;
+    
+    @Column(name = "puntuacion_volumen_habla")
+    private byte puntuacionVolumenHabla;
+    
+    @Column(name = "puntuacion_articulacion")
+    private byte puntuacionArticulacion;
+    
+    @Column(name = "puntuacion_coherencia")
+    private byte puntuacionCoherencia;
+    
+    @Column(name = "puntuacion_espontaneidad")
+    private byte puntuacionEspontaneidad;
+    
+    @Column(name = "comentario_psicologa")
+    private String comentarioPsicologa;
+    
     @Cascade(CascadeType.ALL)
     @OneToMany(mappedBy = "sesion", fetch = FetchType.EAGER)
     private @Getter @Setter List<Problema> problemasSesion;
