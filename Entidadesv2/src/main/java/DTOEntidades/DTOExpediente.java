@@ -38,7 +38,11 @@ public @Data class DTOExpediente {
         
         dtoExpediente.setId(exp.getId());
         dtoExpediente.setEnfermedadPrevia(exp.getEnfermedadPrevia());
-        dtoExpediente.setDiagnostico(DTODiagnostico.from(exp.getDiagnostico()));
+        
+        if(exp.getDiagnostico() != null) {
+            dtoExpediente.setDiagnostico(DTODiagnostico.from(exp.getDiagnostico()));
+        }
+        
         dtoExpediente.setAntecedentes(exp.getAntecedentes());
         dtoExpediente.setPreguntaMagica(exp.getPreguntaMagica());
         

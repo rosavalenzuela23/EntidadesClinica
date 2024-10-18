@@ -7,8 +7,10 @@ package org.marcos.Entidades;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
@@ -28,6 +30,20 @@ public @Data class MedicamentoDelExpediente implements Serializable {
     
     @EmbeddedId
     private MedicamentoExpedienteLlave id;
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @MapsId("id_expediente")
+    @JoinColumn(
+     name = "id_expediente"
+    )
+    private Expediente expediente;
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @MapsId("id_medicamento")
+    @JoinColumn(
+            name = "id_medicamento"
+    )
+    private Medicamento medicamento;
     
     @Column(name = "dosis")
     private String dosis;

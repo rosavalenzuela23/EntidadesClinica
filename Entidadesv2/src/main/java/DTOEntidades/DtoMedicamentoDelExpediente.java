@@ -23,7 +23,7 @@ public @Data class DtoMedicamentoDelExpediente {
     public static DtoMedicamentoDelExpediente from(MedicamentoDelExpediente mde) {
         var dto = new DtoMedicamentoDelExpediente();
         
-        dto.setMedicamento(DTOMedicamento.from(mde.getId().getMedicamento()));
+        dto.setMedicamento(DTOMedicamento.from(mde.getMedicamento()));
         dto.setDosis(mde.getDosis());
         dto.setFrecuencia(mde.getFrecuencia());
         

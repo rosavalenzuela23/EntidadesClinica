@@ -37,8 +37,7 @@ public @Data class Medicamento {
     @Column(name = "descripcion")
     private String descripcion;
     
-    @OneToMany
-    @JoinColumn(name = "id_expediente")
+    @OneToMany(mappedBy = "medicamento")
     private List<MedicamentoDelExpediente> expedientes;
     
 }

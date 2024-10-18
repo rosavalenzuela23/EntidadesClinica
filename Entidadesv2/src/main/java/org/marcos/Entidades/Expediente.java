@@ -42,7 +42,7 @@ public @Data class Expediente {
     @Column(name = "enfermedad_previa")
     private String enfermedadPrevia;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @PrimaryKeyJoinColumn
     @JoinColumn(name = "id_diagnostico")
     private Diagnostico diagnostico;
@@ -54,22 +54,21 @@ public @Data class Expediente {
     private String preguntaMagica;
     
     @PrimaryKeyJoinColumn
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "id")
     private List<IntegranteHogar> integranteHogar;
     
     @PrimaryKeyJoinColumn
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "id")
     private List<FamiliarConfianza> familiaresConfianza;
     
     @Column(name = "motivo_consulta")
     private String motivoConsulta;
     
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
     
-    @OneToMany
-    @JoinColumn(name = "id_expediente")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "expediente")
     private List<MedicamentoDelExpediente> medicamentos;
     
 }

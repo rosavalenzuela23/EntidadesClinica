@@ -4,16 +4,12 @@
  */
 package org.itson.entidades.llaves;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.marcos.Entidades.Expediente;
-import org.marcos.Entidades.Medicamento;
 
 /**
  *
@@ -29,16 +25,11 @@ public @Data class MedicamentoExpedienteLlave implements Serializable{
      * TODO: cambiarle el id a las tablas para que coincidan con su nombre
      */
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
-     name = "id_expediente"
-    )
-    private Expediente expediente;
+    @Column(name = "id_expediente")
+    Long id_expediente;
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
-            name = "id_medicamento"
-    )
-    private Medicamento medicamento;
+    @Column(name = "id_medicamento")
+    Long id_medicamento;
+    
     
 }

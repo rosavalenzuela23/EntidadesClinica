@@ -6,6 +6,7 @@ package org.marcos.Entidades;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -43,22 +44,21 @@ public @Data class Sesion {
     private @Getter Long id;
     
     @Cascade(CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    @OneToMany()
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sesion")
     private @Getter @Setter List<ComentarioSesion> comentarios;
     
     @Column(name = "fecha_hora")
     private @Getter @Setter Date fecha;
     
     @Cascade(CascadeType.ALL)
-    @OneToMany(mappedBy = "sesion")
+    @OneToMany(mappedBy = "sesion", fetch = FetchType.EAGER)
     private @Getter @Setter List<Problema> problemasSesion;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_expediente")
     private Expediente expediente;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_psicologo")
     private Psicologo psicologo;
       

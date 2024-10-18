@@ -10,6 +10,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
@@ -53,7 +54,7 @@ public class ComentarioSesion {
     @Column(name = "aspecto_a_medir")
     private @Getter @Setter String aspectoAMedir;
     
-    @PrimaryKeyJoinColumn
+    @JoinColumn(name = "id_sesion")
     @ManyToOne(fetch = FetchType.LAZY)
     private @Getter Sesion sesion;
     
