@@ -33,29 +33,29 @@ import lombok.Setter;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComentarioSesion {
+public @Data class ComentarioSesion {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private @Getter Long id;
+    private Long id;
     
     @Transient
-    private @Getter int numeroSesion;
+    private int numeroSesion;
     
     @Column(name = "fecha_hora")
-    private @Getter @Setter Date fecha;
+    private Date fecha;
     
     @Column(name = "valoracion_fin")
-    private @Getter @Setter byte valoracionFin; 
+    private byte valoracionFin; 
     
     @Column(name = "valoracion_inicio")
-    private @Getter @Setter byte valoracionInicio;
+    private byte valoracionInicio;
     
     @Column(name = "aspecto_a_medir")
-    private @Getter @Setter String aspectoAMedir;
+    private String aspectoAMedir;
     
     @JoinColumn(name = "id_sesion")
     @ManyToOne(fetch = FetchType.LAZY)
-    private @Getter Sesion sesion;
+    private Sesion sesion;
     
 }
