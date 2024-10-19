@@ -60,6 +60,7 @@ public @Data class DTOSesion {
         dto.setPuntuacionEspontaneidad(s.getPuntuacionEspontaneidad());
         
         dto.setComentarioPsicologa(s.getComentarioPsicologa());
+        dto.setFecha(s.getFecha());
         
         for(ComentarioSesion c : s.getComentarios()) {
             comentarios.add(DTOComentarioSesion.from(c));
