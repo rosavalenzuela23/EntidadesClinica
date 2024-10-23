@@ -4,6 +4,7 @@
  */
 package DTOEntidades;
 
+import java.util.Date;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ public @Data class DTOPaciente {
     private Long id;
     private String telefonoEmergencia;
     private String telefono;
+    private Date fecha;
     private String escolaridad;
     private String nombre;
     private String apellidoPaterno;
@@ -36,6 +38,7 @@ public @Data class DTOPaciente {
         dto.setTelefonoEmergencia(p.getTelefonoEmergencia());
         dto.setEscolaridad(p.getEscolaridad());
         dto.setNombre(p.getNombre());
+        dto.setFecha(p.getFecha());
         dto.setApellidoMaterno(p.getApellidoMaterno());
         dto.setApellidoPaterno(p.getApellidoPaterno());
         dto.setEstadoCivil(p.getEstadoCivil());
