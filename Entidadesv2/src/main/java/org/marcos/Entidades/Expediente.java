@@ -68,7 +68,7 @@ public @Data class Expediente {
     @Column(name = "motivo_consulta")
     private String motivoConsulta;
     
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
     

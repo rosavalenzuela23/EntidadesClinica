@@ -26,14 +26,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class Psicologo extends Empleado{
+public @Data class Psicologo extends Empleado implements Cloneable{
     
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        name = "pacientes_psicologos",
-        joinColumns = @JoinColumn(name = "id_psicologo"),
-        inverseJoinColumns = @JoinColumn(name = "id_paciente")
-    )
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "psicologos")
     private List<Paciente> pacientes;
     
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "psicologo")

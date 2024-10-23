@@ -17,7 +17,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -32,7 +31,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "pacientes")
 @AllArgsConstructor
 @NoArgsConstructor
-public @Data class Paciente {
+public @Data class Paciente implements Cloneable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,7 +64,11 @@ public @Data class Paciente {
     private TipoVivienda tipoVivienda;
     
     
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "pacientes")
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "pacientes_psicologos",
+            joinColumns = @JoinColumn(name = "id_paciente"),
+            inverseJoinColumns = @JoinColumn(name = "id_psicologo")
+            )
     private List<Psicologo> psicologos;
     
     @OneToOne(
