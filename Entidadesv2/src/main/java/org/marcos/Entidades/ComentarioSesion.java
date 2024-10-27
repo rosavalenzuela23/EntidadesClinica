@@ -42,9 +42,6 @@ public @Data class ComentarioSesion {
     @Transient
     private int numeroSesion;
     
-    @Column(name = "fecha_hora")
-    private Date fecha;
-    
     @Column(name = "valoracion_fin")
     private byte valoracionFin; 
     

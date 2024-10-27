@@ -28,6 +28,7 @@ class DTOProblema {
     private byte afectacionAmigos;
     private byte afectacionLaboral;
     private byte afectacionEspiritual;
+    private byte afectacionEconomico;
 
     public static DTOProblema from(Problema p) {
         var dto = new DTOProblema();
@@ -42,7 +43,7 @@ class DTOProblema {
         dto.setAfectacionAmigos(p.getAfectacionAmigos());
         dto.setAfectacionLaboral(p.getAfectacionLaboral());
         dto.setAfectacionEspiritual(p.getAfectacionEspiritual());
-        
+        dto.setAfectacionEconomico(p.getAfectacionEconomico());
         return dto;
     }
     

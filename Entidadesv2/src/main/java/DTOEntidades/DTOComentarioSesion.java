@@ -19,7 +19,6 @@ import org.marcos.Entidades.ComentarioSesion;
 public @Data class DTOComentarioSesion {
     private Long id;
     private int numeroSesion;
-    private Date fecha;
     private byte valoracionFin;
     private byte valoracionInicio;
     private String aspectoAMedir;
@@ -29,7 +28,6 @@ public @Data class DTOComentarioSesion {
         
         dto.setId(c.getId());
         dto.setNumeroSesion(c.getNumeroSesion());
-        dto.setFecha(c.getFecha());
         dto.setValoracionFin(c.getValoracionFin());
         dto.setValoracionInicio(c.getValoracionInicio());
         dto.setAspectoAMedir(c.getAspectoAMedir());

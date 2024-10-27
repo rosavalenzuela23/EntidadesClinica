@@ -60,6 +60,9 @@ public @Data class Problema {
     @Column(name = "afectacion_espiritual")
     private @Getter @Setter byte afectacionEspiritual;
     
+    @Column(name = "afectacion_economico")
+    private @Getter @Setter byte afectacionEconomico;
+    
     @JoinColumn(name = "id_sesion")
     @ManyToOne(fetch = FetchType.LAZY)
     private Sesion sesion;

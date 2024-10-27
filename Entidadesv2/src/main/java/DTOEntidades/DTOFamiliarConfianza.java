@@ -19,8 +19,6 @@ import org.marcos.Entidades.Parentesco;
 public @Data class DTOFamiliarConfianza {
     private Long id;
     private String nombre;
-    private String apellidoPaterno;
-    private String apellidoMaterno;
     private String parentesco;
     private String telefono;
     
@@ -29,8 +27,6 @@ public @Data class DTOFamiliarConfianza {
         
         dto.setId(f.getId());
         dto.setNombre(f.getNombre());
-        dto.setApellidoPaterno(f.getApellidoPaterno());
-        dto.setApellidoMaterno(f.getApellidoMaterno());
         dto.setParentesco(f.getParentesco());
         dto.setTelefono(f.getTelefono());
         

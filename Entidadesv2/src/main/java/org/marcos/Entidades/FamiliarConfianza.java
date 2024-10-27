@@ -34,13 +34,7 @@ public @Data class FamiliarConfianza {
     
     @Column(name = "nombres")
     private String nombre;
-    
-    @Column(name = "apellido_paterno")
-    private String apellidoPaterno;
-    
-    @Column(name = "apellido_materno")
-    private String apellidoMaterno;
-    
+      
     @Column(name = "parentesco")
     private String parentesco;
     
