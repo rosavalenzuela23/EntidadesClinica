@@ -43,6 +43,7 @@ public @Data class DTOPaciente {
         dto.setApellidoPaterno(p.getApellidoPaterno());
         dto.setEstadoCivil(p.getEstadoCivil());
         dto.setTipoVivienda(p.getTipoVivienda());
+        dto.setTelefono(p.getTelefono());
         
         return dto;
     }

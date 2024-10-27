@@ -57,12 +57,13 @@ public @Data class Expediente {
     @Column(name = "pregunta_magica")
     private String preguntaMagica;
     
-    @PrimaryKeyJoinColumn
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "id")
+    @Column(name = "deseo")
+    private String deseo;
+    
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "expediente")
     private List<IntegranteHogar> integranteHogar;
     
-    @PrimaryKeyJoinColumn
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "expediente")
     private List<FamiliarConfianza> familiaresConfianza;
     
     @Column(name = "motivo_consulta")

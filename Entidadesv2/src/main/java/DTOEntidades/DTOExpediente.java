@@ -27,6 +27,7 @@ public @Data class DTOExpediente {
     private String diagnostico;
     private String antecedentes;
     private String preguntaMagica;
+    private String deseo;
     private List<DTOIntegranteHogar> integranteHogar;
     private List<DTOFamiliarConfianza> familiaresConfianza;
     private String motivoConsulta;
@@ -39,6 +40,7 @@ public @Data class DTOExpediente {
         dtoExpediente.setId(exp.getId());
         dtoExpediente.setEnfermedadPrevia(exp.getEnfermedadPrevia());
         
+        dtoExpediente.setDeseo(exp.getDeseo());
         dtoExpediente.setDiagnostico(exp.getDiagnostico());
         
         dtoExpediente.setAntecedentes(exp.getAntecedentes());
