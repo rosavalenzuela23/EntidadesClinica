@@ -59,6 +59,9 @@ public @Data class Expediente {
     @Column(name = "deseo")
     private String deseo;
     
+    @Column(name = "medicamentos")
+    private String medicamentos;
+    
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "expediente")
     private List<IntegranteHogar> integranteHogar;
     
@@ -71,9 +74,6 @@ public @Data class Expediente {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
-    
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "expediente")
-    private List<MedicamentoDelExpediente> medicamentos;
     
     @PrePersist()
     public void onPrePersist() {

@@ -28,10 +28,10 @@ public @Data class DTOExpediente {
     private String antecedentes;
     private String preguntaMagica;
     private String deseo;
+    private String medicamentos;
     private List<DTOIntegranteHogar> integranteHogar;
     private List<DTOFamiliarConfianza> familiaresConfianza;
     private String motivoConsulta;
-    private List<DtoMedicamentoDelExpediente> medicamentos;
     
     public static DTOExpediente from(Expediente exp) {
         
@@ -66,17 +66,7 @@ public @Data class DTOExpediente {
         
         dtoExpediente.setMotivoConsulta(exp.getMotivoConsulta());
         
-        
-        List<DtoMedicamentoDelExpediente> medicamentos = new LinkedList();
-        //hacer la lista de los medicamentos;
-        
-        for(MedicamentoDelExpediente mde : exp.getMedicamentos()) {
-            medicamentos.add(DtoMedicamentoDelExpediente.from(mde));
-        }
-        
-        
-        dtoExpediente.setMedicamentos(medicamentos);
-        //Aqui termina la lista de los medicamentos
+        dtoExpediente.setMedicamentos(exp.getMedicamentos());
         
         return dtoExpediente;
     }
