@@ -18,13 +18,16 @@ import org.marcos.Entidades.Empleado;
 public @Data class DTOEmpleado {
     private Long id;
     private String usuario;
+    private String password;
+    private String token;
     
     public static DTOEmpleado from(Empleado e) {
         var dto = new DTOEmpleado();
         
         dto.setId(e.getId());
         dto.setUsuario(e.getUsuario());
-        
+        dto.setPassword(e.getContrasenia());
+        dto.setToken(e.getClass().getSimpleName());
         return dto;
     }
     
