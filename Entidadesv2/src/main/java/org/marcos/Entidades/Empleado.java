@@ -37,5 +37,8 @@ public @Data class Empleado {
     
     @Column(name = "contrasenia")
     private String contrasenia;
+    
+    @Column(name = "estado")
+    private boolean estado;
 
 }

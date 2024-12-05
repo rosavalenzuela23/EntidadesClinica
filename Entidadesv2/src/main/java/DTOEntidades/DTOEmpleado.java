@@ -20,6 +20,7 @@ public @Data class DTOEmpleado {
     private String usuario;
     private String password;
     private String token;
+    private boolean estado;
     
     public static DTOEmpleado from(Empleado e) {
         var dto = new DTOEmpleado();
@@ -28,6 +29,7 @@ public @Data class DTOEmpleado {
         dto.setUsuario(e.getUsuario());
         dto.setPassword(e.getContrasenia());
         dto.setToken(e.getClass().getSimpleName());
+        dto.setEstado(e.isEstado());
         return dto;
     }
     
